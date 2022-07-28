@@ -11,3 +11,8 @@
 * Проект должен запускаться командой npm i && npm run start
 * Опционально: проект доступен на GitHub Pages/Vercel/etc.
 
+## Запуск проекта в development режиме на localhost:3000
+```bash
+git clone https://github.com/mvodev/mindbox.git
+npm i && npm run start
+```
