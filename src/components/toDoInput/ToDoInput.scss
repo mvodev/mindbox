@@ -1,0 +1,17 @@
+.todo-add{
+  width: 500px;
+  margin: 0 auto;
+  &__label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  &__input{
+    border: 1px solid gray;
+    border-radius: 4px;
+    height: 38px;
+    padding-left: 8px;
+  }
+}

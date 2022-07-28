@@ -1,0 +1,16 @@
+.todo-item{
+  list-style-type: none;
+  width: 450px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(74, 81, 84);
+  border-radius: 4px;
+  margin: 10px auto;
+  padding: 8px;
+
+  &.completed span{
+    text-decoration: line-through;
+  }
+}
