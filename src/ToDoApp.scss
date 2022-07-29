@@ -12,9 +12,21 @@
     margin-top: 20px;
     user-select: none;
   }
-  
-  &__filter{
-    margin: 10px auto;
-    user-select: none;
+  &__filter-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
+
+  &__filter{
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__filter input {
+    cursor: pointer;
+  }
+
 }

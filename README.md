@@ -16,3 +16,7 @@
 git clone https://github.com/mvodev/mindbox.git
 npm i && npm run start
 ```
+## Запуск тестов  
+```bash
+npm run test
+```
