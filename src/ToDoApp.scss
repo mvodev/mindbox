@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 
   &__header{
     font-size: 2.5rem;
@@ -12,6 +12,7 @@
     margin-top: 20px;
     user-select: none;
   }
+  
   &__filter-wrapper{
     display: flex;
     flex-direction: column;
@@ -27,6 +28,11 @@
 
   &__filter input {
     cursor: pointer;
+  }
+
+  &__result {
+    display: flex;
+    gap: 10px;
   }
 
 }

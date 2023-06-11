@@ -4,14 +4,14 @@ export type ToDoItemType = {
   title: string;
   completed: boolean;
   id:number;
-  handlerCompleted: (id:number)=>void;
+  handleCompleted: (id:number)=>void;
 }
 
 const ToDoItem = (props:ToDoItemType) => {
-  const {title,completed,id,handlerCompleted} = props;
+  const {title,completed,id,handleCompleted} = props;
 
   const handlerChecked = () => {
-    handlerCompleted(id);
+    handleCompleted(id);
   }
 
   return (

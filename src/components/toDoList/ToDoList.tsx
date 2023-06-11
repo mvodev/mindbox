@@ -2,11 +2,11 @@ import ToDoItem, { ToDoItemType } from "../toDoItem/ToDoItem";
 
 type ToDoListPropsType = {
   toDoArray:Array<ToDoItemType>;
-  handlerCompleted: (id:number)=>void;
+  handleCompleted: (id:number)=>void;
 }
 
 const ToDoList = (props:ToDoListPropsType) => {
-  const { toDoArray, handlerCompleted } = props;
+  const { toDoArray, handleCompleted } = props;
 
   return (
     <ul className="todo-list">
@@ -17,7 +17,7 @@ const ToDoList = (props:ToDoListPropsType) => {
                     completed={elem.completed}
                     id={elem.id}
                     key={elem.id}
-                    handlerCompleted={handlerCompleted}
+                    handleCompleted={handleCompleted}
                   />
         })
       }

@@ -1,9 +1,9 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ToDoApp from './ToDoApp';
 import userEvent from '@testing-library/user-event';
 
-describe("ToDoApp",()=>{
+describe("ToDoApp tests",() => {
+
   it('render ToDo component',() => {
     render(<ToDoApp />);
     expect(screen.getByText('Тестовое задание для Mindbox')).toBeInTheDocument();
@@ -19,12 +19,14 @@ describe("ToDoApp",()=>{
     expect(screen.getByText('qwerty')).toBeInTheDocument();
     expect(screen.getByText('abc')).toBeInTheDocument();
   })
+
   it('show correct amount in list after clicked on \'Показать только незавершенные\'',() => {
     render(<ToDoApp />);
     userEvent.type(screen.getByLabelText("Добавить задачу"), "qwerty{enter}");
     userEvent.click(screen.getByLabelText("Показать только незавершенные"));
     expect(screen.getByText('qwerty')).toBeInTheDocument();
   })
+
   it('show correct amount in list after clicked on \'Показать только завершенные\'',() => {
     render(<ToDoApp />);
     userEvent.type(screen.getByLabelText("Добавить задачу"), "qwerty{enter}");

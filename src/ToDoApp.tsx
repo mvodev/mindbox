@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import ToDoInput from './components/toDoInput/ToDoInput';
 import { ToDoItemType } from './components/toDoItem/ToDoItem';
 import ToDoList from './components/toDoList/ToDoList';
@@ -11,7 +10,7 @@ const ToDoApp = () => {
   const [showCompleted,setShowCompleted] = useState(false);
   const [showIncompleted,setShowIncompleted] = useState(false);
 
-  const handlerCompleted = (id:number) => {
+  const handleCompleted = (id:number) => {
     const newState = todoState.map(elem=>{
       if(elem.id === id) elem.completed = !elem.completed;
       return elem;
@@ -20,12 +19,12 @@ const ToDoApp = () => {
     setFilteredState(newState);
   }
 
-  const handlerInput = (inputValue:string) => {
+  const handleInput = (inputValue:string) => {
     const newCase: ToDoItemType = {
       title:inputValue,
       completed:false,
       id:Date.now(),
-      handlerCompleted
+      handleCompleted
     }
     setTodoState(prev => [newCase,...prev]);
     setFilteredState(prev => [newCase,...prev]);
@@ -33,14 +32,10 @@ const ToDoApp = () => {
 
   useEffect(() => {
     if (showCompleted) {
-      setFilteredState(todoState.filter((elem)=>{
-        return elem.completed === true
-      }));
+      setFilteredState(todoState.filter(elem=>elem.completed === true));
     }
     else if (showIncompleted) {
-      setFilteredState(todoState.filter((elem)=>{
-        return elem.completed === false
-      }));
+      setFilteredState(todoState.filter(elem=>elem.completed === false));
     } else {
       setFilteredState(todoState);
     }
@@ -49,7 +44,7 @@ const ToDoApp = () => {
   return (
     <section className="todo">
       <h1 className="todo__header">Тестовое задание для Mindbox</h1>
-      <ToDoInput handlerKeyPressed = {handlerInput}/>
+      <ToDoInput handlerKeyPressed = {handleInput}/>
       <div className="todo__filter-wrapper">
         <label className="todo__filter">
           Показать только завершенные
@@ -82,7 +77,12 @@ const ToDoApp = () => {
           />
         </label>
       </div>
-      <ToDoList toDoArray={filteredState} handlerCompleted={handlerCompleted}/>
+      <ToDoList toDoArray={filteredState} handleCompleted={handleCompleted}/>
+      <span>
+        {`Всего дел: ${todoState.length}  `}
+        {`Завершенных: ${todoState.filter(todo=>todo.completed).length}`}
+        {` Незавершенных: ${todoState.filter(todo=>!todo.completed).length}`}
+      </span>
     </section>
   );
 }
