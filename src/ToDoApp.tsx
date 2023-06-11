@@ -41,6 +41,11 @@ const ToDoApp = () => {
     }
   },[showCompleted,showIncompleted,todoState])
 
+  const handleClearTasks = () => {
+    setTodoState([]);
+    setFilteredState([]);
+  }
+
   return (
     <section className="todo">
       <h1 className="todo__header">Тестовое задание для Mindbox</h1>
@@ -78,11 +83,14 @@ const ToDoApp = () => {
         </label>
       </div>
       <ToDoList toDoArray={filteredState} handleCompleted={handleCompleted}/>
-      <span>
+      <div className='todo__tasks-wrapper'>
+        <span>
         {`Всего дел: ${todoState.length}  `}
         {`Завершенных: ${todoState.filter(todo=>todo.completed).length}`}
         {` Незавершенных: ${todoState.filter(todo=>!todo.completed).length}`}
       </span>
+      <button className='todo__clear' onPointerDown={handleClearTasks}>Очистить все</button>
+      </div>
     </section>
   );
 }
