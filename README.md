@@ -20,3 +20,6 @@ npm i && npm run start
 ```bash
 npm run test
 ```
+
+## Тестовая страница
+[https://mvodev.github.io/mindbox/]
