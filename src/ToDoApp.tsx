@@ -83,6 +83,11 @@ const ToDoApp = () => {
         </label>
       </div>
       <ToDoList toDoArray={filteredState} handlerCompleted={handlerCompleted}/>
+      <span>
+        {`Всего дел: ${todoState.length}  `}
+        {`Завершенных: ${todoState.filter(todo=>todo.completed).length}`}
+        {` Незавершенных: ${todoState.filter(todo=>!todo.completed).length}`}
+      </span>
     </section>
   );
 }
