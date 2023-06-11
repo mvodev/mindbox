@@ -12,6 +12,7 @@
     margin-top: 20px;
     user-select: none;
   }
+
   &__filter-wrapper{
     display: flex;
     flex-direction: column;
@@ -27,6 +28,17 @@
 
   &__filter input {
     cursor: pointer;
+  }
+
+  &__clear {
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__tasks-wrapper {
+    display: flex;
+    gap: 10px;
   }
 
 }
